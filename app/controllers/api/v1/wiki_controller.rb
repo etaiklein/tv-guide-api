@@ -46,7 +46,7 @@ module Api::V1
 
       cal.publish
 
-      render json: cal.to_ical
+      render json: cal.to_ical.to_json
     end
 
   end
