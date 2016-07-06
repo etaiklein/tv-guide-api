@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #project gems
 gem 'rack-cors'
 gem 'curb'
-gem 'icalendar'
+gem 'icalendar', '~> 2.4.0'
 gem 'nokogiri'
 
 # Use ActiveModel has_secure_password

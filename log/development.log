@@ -1389,3 +1389,145 @@ Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/Adventure_Time_(season_7
 Processing by Api::V1::WikiController#index as */*
   Parameters: {"url"=>"https://en.wikipedia.org/wiki/Adventure_Time_(season_7)"}
 Completed 200 OK in 1012ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:39:37 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 500 Internal Server Error in 1777ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Icalendar::Values::DateOrDateTime):
+  app/controllers/api/v1/wiki_controller.rb:38:in `block in index'
+  app/controllers/api/v1/wiki_controller.rb:16:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.1ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:40:22 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 500 Internal Server Error in 1530ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Icalendar::Values::DateOrDateTime):
+  app/controllers/api/v1/wiki_controller.rb:38:in `block in index'
+  app/controllers/api/v1/wiki_controller.rb:16:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (80.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (175.9ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:42:45 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 500 Internal Server Error in 2267ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant Icalendar::Values::DateOrDateTime):
+  app/controllers/api/v1/wiki_controller.rb:38:in `block in index'
+  app/controllers/api/v1/wiki_controller.rb:16:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (164.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (94.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (210.9ms)
+
+
+Started GET "/v1/wiki?url=wikipedia" for ::1 at 2016-07-05 20:45:08 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"wikipedia"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+Curl::Err::HostResolutionError (Couldn't resolve host name):
+  app/controllers/api/v1/wiki_controller.rb:10:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (154.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (3.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (155.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (332.2ms)
+
+
+Started GET "/v1/wiki?url=https://en/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:45:14 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en/wiki/List_of_Adventure_Time_episodes"}
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+Curl::Err::HostResolutionError (Couldn't resolve host name):
+  app/controllers/api/v1/wiki_controller.rb:10:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (145.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (121.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (279.2ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:45:30 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 200 OK in 4392ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:46:20 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 200 OK in 4017ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:49:51 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 200 OK in 4578ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes" for ::1 at 2016-07-05 20:51:15 -0400
+Processing by Api::V1::WikiController#index as */*
+  Parameters: {"url"=>"https://en.wikipedia.org/wiki/List_of_Adventure_Time_episodes"}
+Completed 200 OK in 4452ms (Views: 0.2ms | ActiveRecord: 0.0ms)

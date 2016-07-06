@@ -35,7 +35,8 @@ module Api::V1
         #create a calendar event for each episode
         if date
           event = Icalendar::Event.new
-          event.dtstart = date
+          event.dtstart = Icalendar::Values::DateOrDateTime.new(date.strftime("%Y%m%d")).call
+          event.dtend = Icalendar::Values::DateOrDateTime.new(date.strftime("%Y%m%d")).call
           event.summary = summary
           cal.add_event(event)
           puts "ELEMENT #{num += 1} + #{date}" if date
