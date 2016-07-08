@@ -63,15 +63,18 @@ module Api::V1
     end
 
     def episode_date(episode)
-      date_string = episode["Original air date"]
       begin
+        date_string = episode["Original air date"]
         #remove all numbers after the year
-        stripped_string = date_string[0, date_string.match(/(?<!\d)(?!0000)\d{4}(?!\d)/).end(0)]
+        match = date_string.match(/(?<!\d)(?!0000)\d{4}(?!\d)/)
+        stripped_string = date_string[0, match.end(0)]
+
         date = Date.parse(stripped_string)
         return date
-      rescue ArgumentError
+      rescue ArgumentError, NoMethodError
       end
       return nil
+
     end
 
     def event_title(episode, title)
