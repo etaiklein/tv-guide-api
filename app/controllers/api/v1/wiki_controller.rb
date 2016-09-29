@@ -12,14 +12,5 @@ module Api::V1
       end
     end
 
-    def calendar
-      cal = Calendar.find_by_title(params[:title])
-      if cal
-        render json: cal.ical.to_json
-      else
-        render json: "no future episodes found"
-      end
-    end
-
   end
 end
