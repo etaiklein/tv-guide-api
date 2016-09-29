@@ -10,26 +10,29 @@ class WikiService
 	require 'icalendar'
 
   def initialize(params)
-    @url = params[:url]
+    @cal = Calendar.find_or_create_by({url: params[:url]})
   end
 
-	def create_calendar_of_episodes
-    cal = create_calendar
+	def create_calendar_of_episodes(force = false)
+		return @cal.ical if @cal.ical && !force
+    ical = create_icalendar
     body = curl_wikipedia
-    title = body.css('#firstHeading i').first.content
+    @cal.title = body.css('#firstHeading i').first.content
     episodes = parse_episodes(body)
-    add_events_to_calendar(cal, title, episodes)
-    return cal.to_ical
+    add_events_to_calendar(ical, @cal.title, episodes)
+    @cal.ical = ical.to_ical
+    @cal.save
+    return @cal.ical
   end
 
-  def create_calendar
+  def create_icalendar
   	return Icalendar::Calendar.new
   end
 
   def curl_wikipedia
     require 'curb'
     #curl the wiki
-    c = Curl::Easy.perform(@url)
+    c = Curl::Easy.perform(@cal.url)
     #parse the body
     return Nokogiri::HTML(c.body_str)
   end
@@ -86,9 +89,9 @@ class WikiService
     return "#{title}#{" " + episode["No.\noverall"] if episode["No.\noverall"]}: #{episode["Title"]}"
   end
 
-  def create_calendar_event(cal, date, summary)
+  def create_calendar_event(cal, date, summary, past = true)
       #create a calendar event for each episode
-      if date && date >= Date.today
+      if date && (past || date >= Date.today)
         event = Icalendar::Event.new
         event.dtstart = Icalendar::Values::DateOrDateTime.new(date.strftime("%Y%m%d")).call
         event.dtend = Icalendar::Values::DateOrDateTime.new(date.strftime("%Y%m%d")).call

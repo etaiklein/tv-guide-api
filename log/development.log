@@ -1,6 +1,0 @@
-
-
-Started GET "/v1/wiki?url=https://en.wikipedia.org/wiki/Adventure_Time_(season_7)" for ::1 at 2016-07-07 17:09:55 -0400
-Processing by Api::V1::WikiController#index as HTML
-  Parameters: {"url"=>"https://en.wikipedia.org/wiki/Adventure_Time_(season_7)"}
-Completed 200 OK in 1557ms (Views: 0.2ms)

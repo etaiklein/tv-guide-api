@@ -5,6 +5,10 @@ gem 'rails', '4.2.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+gem 'pg'
+gem 'activerecord'
+gem 'annotate'
+
 # act as api
 gem 'rack-cors'
 # curl
