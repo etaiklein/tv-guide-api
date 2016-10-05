@@ -4,7 +4,7 @@ module Api::V1
     def show
       cal = Calendar.find_by_title(params[:title])
       if cal
-        render json: cal.ical.to_json
+        render plain: cal.ical
       else
         render json: "no future episodes found"
       end
