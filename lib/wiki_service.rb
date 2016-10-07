@@ -1,33 +1,34 @@
-# 1. args X
-# 2. service X
-# 3. req once X
-# 4. don't mutate, return X
-# 5. each instead of map if you dont need ary X
 # 6. specs 
 # 7. cache helper -----------
 
 class WikiService
-	require 'icalendar'
+  require 'icalendar'
+	require 'nickel'
 
   def initialize(params)
-    @cal = Calendar.find_or_create_by({url: params[:url]})
+    @cal = Calendar.find_by_url(params[:url]) || Calendar.new({url: params[:url]})
   end
 
 	def create_calendar_of_episodes(force = false)
-		return @cal.ical if @cal.ical && !force
-    ical = create_icalendar
-    body = curl_wikipedia
-    @cal.title = body.css('#firstHeading i').first.content
-    episodes = parse_episodes(body)
-    add_events_to_calendar(ical, @cal.title, episodes)
-    @cal.ical = ical.to_ical
-    @cal.ical.gsub('icalendar-ruby', '-//Google Inc//Google Calendar 70.9054//EN')
-    @cal.save
+    if force || !@cal.ical
+      ical = create_icalendar
+      body = curl_wikipedia
+      episodes = parse_episodes(body)
+      @cal.title = title(body)
+      add_events_to_calendar(ical, @cal.title, episodes)
+      @cal.ical = ical.to_ical.gsub('icalendar-ruby', '-//Google Inc//Google Calendar 70.9054//EN')
+    end
+    @cal.queried_at = DateTime.now
+    @cal.save!
     return @cal.ical
   end
 
   def create_icalendar
   	return Icalendar::Calendar.new
+  end
+
+  def title(body)
+    return body.css('#firstHeading i').first.content
   end
 
   def curl_wikipedia
@@ -45,7 +46,6 @@ class WikiService
       create_calendar_event(cal, date, summary)
     end
   end
-
 
   def parse_episodes(body)
     #we don't need season information, so we'll just track episodes
@@ -71,14 +71,9 @@ class WikiService
 
   #TODO: test by locale.
   def episode_date(episode)
+    date_string = episode["Original air date"] || episode["Original release date"] || episode["Airdate"]
     begin
-      date_string = episode["Original air date"]
-      #remove all numbers after the year
-      match = date_string.match(/(?<!\d)(?!0000)\d{4}(?!\d)/)
-      stripped_string = date_string[0, match.end(0)]
-
-      date = Date.parse(stripped_string)
-      return date
+      return Nickel.parse(date_string).occurrences[0].start_date.to_date
     rescue ArgumentError, NoMethodError
     	puts "invalid episode date " + date_string.to_s
     end

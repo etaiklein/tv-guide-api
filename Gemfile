@@ -17,6 +17,8 @@ gem 'curb'
 gem 'icalendar', '~> 2.4.0'
 # explore html file tree
 gem 'nokogiri'
+# date parsing
+gem 'nickel'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

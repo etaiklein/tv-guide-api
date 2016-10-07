@@ -4,11 +4,16 @@ module Api::V1
     def show
       cal = Calendar.find_by_title(params[:title])
       if cal
+        cal.queried_at = DateTime.now
+        cal.save()
         render plain: cal.ical
       else
-        render json: "no future episodes found"
+        render json: "You found a new show! Enter in a wiki url for it like 'https://en.wikipedia.org/wiki/List_of_Steven_Universe_episodes'!"
       end
     end
 
+    def recent
+      render json: Calendar.where("length(ical) > 120").order(queried_at: :desc).pluck(:title).take(10)
+    end
   end
 end

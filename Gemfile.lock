@@ -66,6 +66,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    nickel (0.1.6)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -128,6 +129,7 @@ DEPENDENCIES
   curb
   icalendar (~> 2.4.0)
   jbuilder (~> 2.0)
+  nickel
   nokogiri
   pg
   rack-cors

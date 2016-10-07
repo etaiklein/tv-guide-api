@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         end
       end
       get '/:title/calendar.ics', to: 'calendar#show'
+      get '/recent', to: 'calendar#recent'
     end
   end
 end
