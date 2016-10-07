@@ -8,7 +8,7 @@ Rails.application.routes.draw do
           get '/', to: 'wiki#index'
         end
       end
-      get '/:title/calendar.ics', to: 'calendar#show'
+      get '/:title/calendar.ics', to: 'calendar#show', :constraints => { :title => /[^\/]+/ }
       get '/recent', to: 'calendar#recent'
     end
   end
