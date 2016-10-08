@@ -86,7 +86,11 @@ class WikiService
   def episode_date(episode)
     date_string = episode["Original air date"] || episode["Original release date"] || episode["Airdate"] || episode["Original airdate"]
     begin
-      return Nickel.parse(date_string).occurrences[0].start_date.to_date
+      #remove all numbers after the year
+      match = date_string.match(/(?<!\d)(?!0000)\d{4}(?!\d)/)
+      stripped_string = date_string[0, match.end(0)]
+      date = Date.parse(stripped_string)
+      return date
     rescue ArgumentError, NoMethodError
     	puts "invalid episode date " + date_string.to_s
     end
