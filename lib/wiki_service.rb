@@ -10,7 +10,7 @@ class WikiService
   end
 
   def create_calendar_of_episodes(force = false)
-    query = Query.new(query: @cal.url)
+    query = Query.create(query: @cal.url, status: "created")
     begin
       if force || !@cal.ical
         ical = create_icalendar

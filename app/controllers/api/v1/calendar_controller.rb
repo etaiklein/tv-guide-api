@@ -3,7 +3,7 @@ module Api::V1
 
     def show
       cal = Calendar.find_by_title(params[:title])
-      query = Query.new(query: params[:title])
+      query = Query.create(query: params[:title], status: "created")
       if cal
         query.status = "success"
         cal.queried_at = query.created_at
