@@ -3,7 +3,7 @@ module Api::V1
 
     def index
       cal = WikiService.new(params).create_calendar_of_episodes
-      render json: cal.to_json
+      render plain: cal
     end
 
   end
