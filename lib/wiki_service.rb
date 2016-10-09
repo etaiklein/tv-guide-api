@@ -10,7 +10,7 @@ class WikiService
   end
 
   def create_calendar_of_episodes(force = false)
-    query = Query.create(query: @cal.url, status: "created")
+    query = Query.create(query: @cal.url || "", status: "created")
     begin
       if force || !@cal.ical
         ical = create_icalendar
@@ -22,11 +22,12 @@ class WikiService
       end
       @cal.queried_at = query.created_at
       @cal.save!
+      query.calendar_id = @cal.id
       query.status = "success"
       return @cal.ical
     rescue => error
       query.status = "failure"
-      info = @cal.url + " failed: "
+      info = @cal.url.to_s + " failed: "
       Rails.logger.info(info + error.to_s)
       raise info + error.to_s
     ensure

@@ -8,6 +8,7 @@ module Api::V1
         query.status = "success"
         cal.queried_at = query.created_at
         cal.save()
+        query.calendar_id = cal.id
         render plain: cal.ical
       else
         query.status = "failure"
