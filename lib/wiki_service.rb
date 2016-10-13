@@ -16,7 +16,7 @@ class WikiService
         ical = create_icalendar
         body = curl_wikipedia
         episodes = parse_episodes(body)
-        @cal.title = title(body)
+        @cal.title = @cal.title || title(body)
         add_events_to_calendar(ical, @cal.title, episodes)
         @cal.ical = ical.to_ical.gsub('icalendar-ruby', '-//Google Inc//Google Calendar 70.9054//EN')
       end
